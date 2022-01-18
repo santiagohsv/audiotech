@@ -1,4 +1,6 @@
+import CardWidget from "./CartWidget/CartWidget";
 import "./NavBar.css";
+
 
 const NavBar = () => {
   return (
@@ -6,6 +8,9 @@ const NavBar = () => {
       <button>Inicio</button>
       <button>Contacto</button>
       <button>Tienda</button>
+      <CardWidget/>
+      
+
     </nav>
   );
 };
