@@ -1,0 +1,11 @@
+.item-list-card {
+  width: 150px;
+  height: auto;
+  background-color: cadetblue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
