@@ -1,14 +1,24 @@
-import ItemCount from "../ItemCount";
+import { useEffect, useState } from "react";
+import { getProductos } from "../../database";
+
+import ItemList from "../ItemList";
 import "./styles.css";
 
-function ItemListContainer({ productTittle, productPrice,productStock }) {
+
+function ItemListContainer() {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    getProductos()
+      .then((result) => setProductos(result))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
-    <div className="item-list-card">
-      <p>{productTittle}</p>
-      <p>Precio: ${productPrice}</p>
-      <ItemCount stock={productStock} initialQty={1}/>
-    </div>
+    <>
+      <ItemList productos={productos} />
+    </>
   );
 }
 
-export default ItemListContainer;
+export default ItemListContainer
