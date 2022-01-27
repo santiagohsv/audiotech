@@ -1,0 +1,68 @@
+h1 {
+  margin-left: 20px;
+  font-size: 1.2rem;
+  width: 70%;
+  margin: auto;
+  margin-top: 56px;
+  margin-bottom: 32px;
+}
+
+.itemDetailContainer {
+  display: flex;
+  width: 70%;
+  margin: auto;
+}
+
+.imgContainer {
+  width: 50%;
+  margin-top: 40px;
+}
+
+.imgContainer img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 32px;
+}
+
+.detailContainer {
+  width: 50%;
+  max-width: 400px;
+  margin-left: 48px;
+  margin-top: 36px;
+}
+
+.itemStock {
+  font-size: 0.8rem;
+}
+
+.itemPrice {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+.productDetails {
+  margin-top: 16px;
+  padding: 10px;
+}
+
+.productDescription {
+  margin-top: 16px;
+  width: 80%;
+  text-align: justify;
+  min-height: 200px;
+}
+
+.detailContainer button {
+  font-size: 0.8rem;
+  border: 0px;
+  width: 80%;
+  max-width: 400px;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
