@@ -1,12 +1,7 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.item-list-container {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+a {
+  text-decoration: none;
 }

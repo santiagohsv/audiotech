@@ -1,0 +1,31 @@
+footer {
+  background-color: rgba(49, 49, 213, 0.901);
+  font-weight: 600;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 0.9rem;
+  height: 48px;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+footer ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer ul li {
+  color: white;
+  list-style: none;
+  margin-right: 46px;
+  text-shadow: 2px 2px 2px rgb(180, 64, 64);
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+}

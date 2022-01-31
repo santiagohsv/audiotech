@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProductos } from "../../database";
-
 import ItemList from "../ItemList";
 import "./styles.css";
-
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
@@ -16,9 +14,11 @@ function ItemListContainer() {
 
   return (
     <>
-      <ItemList productos={productos} />
+      <div className="item-list-container">
+        <ItemList productos={productos} />
+      </div>
     </>
   );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

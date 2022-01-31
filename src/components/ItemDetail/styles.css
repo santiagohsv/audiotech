@@ -1,10 +1,20 @@
-h1 {
-  margin-left: 20px;
-  font-size: 1.2rem;
-  width: 70%;
+.main {
+  display: flex;
+  flex-direction: column;
+  font-family: "PT Sans Narrow", sans-serif;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 48px;
+}
+.item-title {
+  display: flex;
+  justify-content: center;
   margin: auto;
-  margin-top: 56px;
-  margin-bottom: 32px;
+  font-size: 1.1rem;
+  width: 70%;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  text-shadow: 1px 1px 1px rgb(111, 105, 105);
 }
 
 .itemDetailContainer {
@@ -14,25 +24,30 @@ h1 {
 }
 
 .imgContainer {
-  width: 50%;
+  width: 70%;
+  height: 80%;
   margin-top: 40px;
 }
 
 .imgContainer img {
-  width: 100%;
-  max-width: 600px;
+  height: auto;
+  width: 80%;
   margin-top: 32px;
 }
 
 .detailContainer {
   width: 50%;
+  height: 40%;
   max-width: 400px;
   margin-left: 48px;
   margin-top: 36px;
+  margin-bottom: 100px;
+  font-size: 1vw;
 }
 
 .itemStock {
   font-size: 0.8rem;
+  margin-top: 40px;
 }
 
 .itemPrice {
@@ -54,7 +69,7 @@ h2 {
   margin-top: 16px;
   width: 80%;
   text-align: justify;
-  min-height: 200px;
+  min-height: 60%;
 }
 
 .detailContainer button {
@@ -64,5 +79,13 @@ h2 {
   max-width: 400px;
   height: 40px;
   border-radius: 8px;
-  margin-top: 16px;
+  margin-top: 6%;
+  background-color: rgba(49, 49, 213, 0.901);
+  cursor: pointer;
+  color: white;
+}
+
+.detailContainer button:hover {
+  background-color: rgba(8, 8, 91, 0.901);
+  cursor: pointer;
 }
