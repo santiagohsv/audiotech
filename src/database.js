@@ -70,7 +70,7 @@ export const productos = [
 
   export function getProductos() {
     return new Promise ((resolve)=>{
-      setTimeout(()=>resolve(productos),1000);
+      setTimeout(()=>resolve(productos),1400);
     });
   };
 
