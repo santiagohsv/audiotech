@@ -29,7 +29,7 @@ function ItemListContainer() {
       <div className="item-list-container">
      
 
-<div class="spinner"></div>
+<div className="spinner"></div>
 
 
       </div>

@@ -1,40 +1,29 @@
-import React from "react";
+
 import "./styles.css"
 
-
-const ItemCount = ({ stock, initialQty }) => {
-  const [counter, setCounter] = React.useState(initialQty);
-
-  const increaseQty = () => {
-    if (counter < stock) {
-      setCounter(counter + 1);
-    }
-  };
-
-  const decreaseQty = () => {
-    if (counter > 1) {
-      setCounter(counter - 1);
-    }
-  };
+const ItemCount = ({counter,increaseQty, decreaseQty}) => {
 
   const onAdd = () => {
-
-    if (stock===0)
-    {console.log("No hay stock")
-       
-    }else{ console.log(counter)}
-
+ 
+    return console.log({counter})
   }
-
+ 
   return (
     <>
       <div className="qtyContainer">
-        <button onClick={decreaseQty}>-</button>
-        <p> {counter}</p>
-        <button onClick={increaseQty}>+</button>
+        <button onClick={decreaseQty} className="qty-btn">
+          -
+        </button>
+
+        <h4> {counter}</h4>
+        <button onClick={increaseQty} className="qty-btn">
+          +
+        </button>
       </div>
-      <div>
-        <button  className="onAdd-btn" onClick={onAdd}>Agregar al carrito </button>
+      <div className="addBtnContainer">
+        <button className="onAdd-btn" onClick={onAdd}>
+          Agregar al carrito{" "}
+        </button>
       </div>
     </>
   );

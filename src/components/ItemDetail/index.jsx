@@ -1,6 +1,26 @@
+import { useState } from "react";
+import ItemCount from "../ItemCount";
 import "./styles.css";
 
+
 const ItemDetail = ({ item }) => {
+
+  const [counter, setCounter] = useState(1);
+
+  const increaseQty = () => {
+    if (counter < item.stock) {
+      setCounter(prevCounter => prevCounter + 1);
+    }
+  };
+
+  const decreaseQty = () => {
+    if (counter > 1) {
+      setCounter(prevCounter => prevCounter - 1);
+    }
+  };
+
+
+
   return (
     <div className="main">
       <div className="item-title ">
@@ -15,7 +35,7 @@ const ItemDetail = ({ item }) => {
           <p className="itemPrice">$ {item.precio}</p>
           <h2>Caracteristicas</h2>
           <p className="productDescription">{item.longDescription}</p>
-          <button>Agregar </button>
+          <ItemCount counter={counter} increaseQty={increaseQty} decreaseQty={decreaseQty}/>
         </div>
       </div>
     </div>
