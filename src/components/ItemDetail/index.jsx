@@ -51,7 +51,7 @@ const ItemDetail = ({ item }) => {
             <button className="onAdd-btn" onClick={onAdd}>
               Agregar al carrito{" "}
             </button>
-            <button onClick={() => navigate(`/cart`)}> Csadfo</button>
+            <button className="onAdd-btn" onClick={() => navigate("/cart")}> Ver Carrito</button>
           </div>
         </div>
       </div>
