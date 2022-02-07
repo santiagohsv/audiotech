@@ -3,10 +3,7 @@ import "./styles.css"
 
 const ItemCount = ({counter,increaseQty, decreaseQty}) => {
 
-  const onAdd = () => {
- 
-    return console.log({counter})
-  }
+
  
   return (
     <>
@@ -20,11 +17,11 @@ const ItemCount = ({counter,increaseQty, decreaseQty}) => {
           +
         </button>
       </div>
-      <div className="addBtnContainer">
+{/*       <div className="addBtnContainer">
         <button className="onAdd-btn" onClick={onAdd}>
           Agregar al carrito{" "}
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

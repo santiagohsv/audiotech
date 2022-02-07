@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemCount from "../ItemCount";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 
@@ -19,7 +20,10 @@ const ItemDetail = ({ item }) => {
     }
   };
 
-
+  const onAdd = () => {
+ 
+    return console.log({counter})
+  }
 
   return (
     <div className="main">
@@ -36,6 +40,16 @@ const ItemDetail = ({ item }) => {
           <h2>Caracteristicas</h2>
           <p className="productDescription">{item.longDescription}</p>
           <ItemCount counter={counter} increaseQty={increaseQty} decreaseQty={decreaseQty}/>
+          <div className="addBtnContainer">
+        <button className="onAdd-btn" onClick={onAdd}>
+          Agregar al carrito{" "}
+        </button>
+        <button className="detail-btn show-cart-btn" >
+              <Link  to={"/cart"}>
+                Ver Carrito
+              </Link>
+            </button>
+      </div>
         </div>
       </div>
     </div>

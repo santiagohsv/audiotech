@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail"
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<Productos />} />
             <Route path=":idProducto" element={<ProductDetail />} />
           </Route>
+          <Route path="cart" element={"/"} />
         </Route>
       </Routes>
       <Footer />

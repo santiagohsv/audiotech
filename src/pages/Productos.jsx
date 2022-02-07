@@ -6,8 +6,8 @@ const Productos = () => {
       <div className="categorias">
         <ul>
           <li>categorias:</li>
-          <li class="linkCategoria">grabación y sonido</li>
-          <li class="linkCategoria">sintetizadores</li>
+          <li className="linkCategoria">grabación y sonido</li>
+          <li className="linkCategoria">sintetizadores</li>
         </ul>
       </div>
       <ItemListContainer />
