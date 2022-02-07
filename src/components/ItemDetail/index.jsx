@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { CartContex } from "../../contexts/CartContext";
 import ItemCount from "../ItemCount";
 
 import "./styles.css";
@@ -7,9 +8,10 @@ import "./styles.css";
 
 
 const ItemDetail = ({ item }) => {
-
+  
   const navigate = useNavigate();
   const [counter, setCounter] = useState(1);
+  const {cart,addItem,clear}=useContext(CartContex);
 
   const increaseQty = () => {
     if (counter < item.stock) {
@@ -24,9 +26,12 @@ const ItemDetail = ({ item }) => {
   };
 
   const onAdd = () => {
- 
-    return console.log({counter})
+    addItem (item, counter)
+   
   }
+
+
+  
 
   return (
     <div className="main">
