@@ -6,7 +6,7 @@ import Contacto from "./pages/Contacto";
 import HomePage from "./pages/HomePage"
 import Productos from "./pages/Productos";
 import ProductDetail from "./pages/ProductDetail"
-
+import Cart from "./pages/Cart"
 
 
 
@@ -22,7 +22,7 @@ function App() {
             <Route index element={<Productos />} />
             <Route path=":idProducto" element={<ProductDetail />} />
           </Route>
-          <Route path="cart" element={"/"} />
+          <Route path="cart"  element={<Cart/>} />
         </Route>
       </Routes>
       <Footer />

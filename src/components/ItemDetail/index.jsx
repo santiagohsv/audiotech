@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import ItemCount from "../ItemCount";
-import { Link } from "react-router-dom";
+
 import "./styles.css";
+
 
 
 const ItemDetail = ({ item }) => {
 
+  const navigate = useNavigate();
   const [counter, setCounter] = useState(1);
 
   const increaseQty = () => {
@@ -39,17 +42,17 @@ const ItemDetail = ({ item }) => {
           <p className="itemPrice">$ {item.precio}</p>
           <h2>Caracteristicas</h2>
           <p className="productDescription">{item.longDescription}</p>
-          <ItemCount counter={counter} increaseQty={increaseQty} decreaseQty={decreaseQty}/>
+          <ItemCount
+            counter={counter}
+            increaseQty={increaseQty}
+            decreaseQty={decreaseQty}
+          />
           <div className="addBtnContainer">
-        <button className="onAdd-btn" onClick={onAdd}>
-          Agregar al carrito{" "}
-        </button>
-        <button className="detail-btn show-cart-btn" >
-              <Link  to={"/cart"}>
-                Ver Carrito
-              </Link>
+            <button className="onAdd-btn" onClick={onAdd}>
+              Agregar al carrito{" "}
             </button>
-      </div>
+            <button onClick={() => navigate(`/cart`)}> Csadfo</button>
+          </div>
         </div>
       </div>
     </div>
