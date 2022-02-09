@@ -33,6 +33,8 @@
   height: auto;
   width: 80%;
   margin-top: 28px;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 .detailContainer {
@@ -67,6 +69,7 @@ h2 {
   width: 100%;
   text-align: justify;
   min-height: 60%;
+  font-size: 0.8rem;
 }
 
 .detail-btn {

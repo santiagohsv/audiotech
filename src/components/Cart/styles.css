@@ -1,0 +1,91 @@
+.cart {
+  display: flex;
+  width: 60%;
+}
+
+.item-resume {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50vw;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 0.7rem;
+}
+
+.item-img {
+  margin-left: 5px;
+  width: 10%;
+}
+
+.item-img img {
+  width: 80%;
+  overflow: hidden;
+}
+
+.item-name {
+  width: 20%;
+  font-size: 90%;
+}
+
+.item-price {
+  width: 10%;
+}
+
+.removeBtn {
+  all: unset;
+  margin-top: 2px;
+}
+
+.trashImg {
+  width: 14px;
+  height: 14px;
+}
+.total-price {
+  height: 10%;
+  width: 80%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  margin-right: -2%;
+}
+
+/* 
+.item-img {
+  margin-left: 5px;
+  width: 55px;
+}
+
+.item-img img {
+  width: 50px;
+  height: 50px;
+}
+
+.item-name {
+  width: 30%;
+  font-size: 90%;
+}
+
+.item-price {
+  width: 70px;
+}
+
+.removeBtn {
+  all: unset;
+  margin-top: 2px;
+}
+
+.trashImg {
+  width: 14px;
+  height: 14px;
+}
+.total-price {
+  height: 10%;
+  width: 80%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  margin-right: -2%;
+} */

@@ -1,4 +1,26 @@
-img {
-  margin-right: 8px;
+.header-cart {
   height: 60%;
+  margin-right: 8px;
+}
+
+.header-cart-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.header-cart-counter {
+  background-color: red;
+  color: rgb(225, 215, 215);
+  text-shadow: 2px 2px 2px rgb(23, 6, 4);
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 12px;
+  right: 8px;
 }

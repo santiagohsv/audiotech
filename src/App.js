@@ -5,12 +5,9 @@ import Contacto from "./pages/Contacto";
 import HomePage from "./pages/HomePage"
 import Productos from "./pages/Productos";
 import ProductDetail from "./pages/ProductDetail"
-import Cart from "./pages/Cart"
 import "./App.css";
 import { CartProvider } from "./contexts/CartContext";
-
-
-
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -25,7 +22,7 @@ function App() {
             <Route index element={<Productos />} />
             <Route path=":idProducto" element={<ProductDetail />} />
           </Route>
-          <Route path="cart"  element={<Cart/>} />
+          <Route path="cart"  element={<CartPage/>} />
         </Route>
       </Routes>
       <Footer />
