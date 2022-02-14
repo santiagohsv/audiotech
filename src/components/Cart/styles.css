@@ -1,16 +1,114 @@
-.cart {
+/* .cart {
   display: flex;
   width: 60%;
+} */
+
+.cart-container {
+  width: 90%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  margin-left: 8%;
+}
+.main-cart {
+  /*   display: flex;
+  flex-direction: column; */
+  width: 50vw;
+  max-width: 800px;
+  min-height: 70vh;
+  margin-right: 10px;
+  margin-top: 16vh;
+  /*   margin: auto; */
+  /*  justify-content: center;
+  align-items: center; */
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.item-resume {
+.cart-detail {
+  width: 25vw;
+  max-width: 300px;
+  min-height: 70vh;
+  margin-top: 16vh;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  width: 50vw;
+}
+
+.cart-detail-subtitle {
+  width: 90%;
+  height: max-content;
+  margin-top: 8%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: left;
+  opacity: 0.7;
+}
+
+h3 {
   font-family: "Maven Pro", sans-serif;
   font-size: 0.7rem;
+  color: black;
+}
+
+.shipping-subtitle {
+  width: 90%;
+  height: max-content;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.7;
+}
+
+.cart-title {
+  font-size: 1.5rem;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 8px;
+  /*  font-family: "Maven Pro", sans-serif; */
+  font-family: "Big Shoulders Inline Display", cursive;
+}
+
+.cart-subtitle {
+  width: 90%;
+  height: max-content;
+  margin-top: 4%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: left;
+  opacity: 0.7;
+}
+.cart-subtitle a {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 200;
+  color: black;
+}
+hr {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 8px;
+  border: none;
+  height: 1px;
+  background-color: rgba(113, 108, 108, 0.363);
+}
+.item-resume {
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  margin-top: 4px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.415);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 0.65rem;
 }
 
 .item-img {
@@ -29,9 +127,12 @@
 }
 
 .item-price {
-  width: 10%;
+  width: 15%;
 }
 
+.item-qty {
+  width: 6px;
+}
 .removeBtn {
   all: unset;
   margin-top: 2px;
@@ -41,12 +142,75 @@
   width: 14px;
   height: 14px;
 }
+
+.checkout-title {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: black;
+}
+
+.checkout-personal-info {
+  width: 90%;
+  margin-top: 14%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: left;
+  opacity: 0.7;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 100%;
+  font-weight: 200;
+  color: black;
+}
 .total-price {
   height: 10%;
   width: 80%;
-  margin-top: 10%;
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: flex-end;
-  margin-right: -2%;
+  position: absolute;
+  bottom: 66px;
+}
+
+.total-price h2 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.checkout-btn {
+  font-size: 0.8rem;
+  border: 0px;
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 6%;
+  background-color: rgba(49, 49, 213, 0.901);
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+}
+
+.checkout-btn:hover {
+  background-color: rgba(8, 8, 91, 0.901);
+  cursor: pointer;
+}
+
+form {
+  margin-top: 16px;
+  width: 90%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Big Shoulders Inline Display", cursive;
+}
+
+input {
+  border: 0;
+  outline: none;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.452);
 }

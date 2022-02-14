@@ -7,9 +7,9 @@ import "./styles.css";
 const CartPage = () => {
   const {cart}=useContext(CartContex)
   return (
-   <div className="main-cart">
-     {cart.length === 0 ? <div className="empty-cart"><h1>No hay productos en el carrito :(</h1> <Link to="/productos" className="secondFont">ir a la tienda</Link></div> : <Cart/>}
-   </div>
+ 
+    <> {cart.length === 0 ? <div className="empty-cart"><h1>No hay productos en el carrito :(</h1> <Link to="/productos" className="secondFont">ir a la tienda</Link></div> : <Cart/>} </>
+
   );
 };
 

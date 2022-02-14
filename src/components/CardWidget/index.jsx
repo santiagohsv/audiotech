@@ -5,16 +5,24 @@ import { useContext } from "react";
 import { CartContex } from "../../contexts/CartContext";
 
 
-
-const CardWidget = () => {
+ const CardWidget = () => {
   const navigate = useNavigate();
-  const {cart, getQty} = useContext(CartContex)
+  const {cart,getQty } = useContext(CartContex)
 
-
-  return  <div className="header-cart">
-  <img src={shoppingCart} alt="shoppingCart"  className="header-cart-logo"  onClick={()=> navigate('/cart')} />
- { getQty() !==0 &&  <h3 className="header-cart-counter">{getQty()}</h3>} 
-  </div>
+    return (
+      <div className="header-cart">
+        <img
+          src={shoppingCart}
+          alt="shoppingCart"
+          className="header-cart-logo"
+          onClick={() => navigate("/cart")}
+        />
+         {cart.length !== 0 && (
+          <h3 className="header-cart-counter">{getQty()}</h3>
+        )}
+      </div>
+      
+    );
 
 
 };

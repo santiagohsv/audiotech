@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
+//import { getFirestore } from "../firebase";
+
+
+
 
 const HomePage = () => {
+
+ /*  const db= getFirestore();
+  const collection = db.collection("productos");
+  const addProducts = () =>{
+
+    productos.forEach((productos)=>{
+      collection.add(productos)
+                .then((res)=>console.log("producto agregad", res.id))
+                .catch((err)=>console.log("error", err))
+    })
+  }
+ */
+
+
   return (
     <>
       <div className="underConstruction">
@@ -11,9 +29,9 @@ const HomePage = () => {
         <Link to="productos" className="secondFont productos"> IR A TIENDA</Link>
         </div>
        </div>
+
     </>
   );
 };
 
 export default HomePage;
-     <Link to="productos">PRODUCTOS</Link>

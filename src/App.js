@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail"
 import "./App.css";
 import { CartProvider } from "./contexts/CartContext";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path=":idProducto" element={<ProductDetail />} />
           </Route>
           <Route path="cart"  element={<CartPage/>} />
+          <Route path="checkout/:orderId" element={<CheckoutPage/>} />
         </Route>
       </Routes>
       <Footer />

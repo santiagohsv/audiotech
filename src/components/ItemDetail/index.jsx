@@ -8,34 +8,30 @@ import "./styles.css";
 
 
 const ItemDetail = ({ item }) => {
-  
   const navigate = useNavigate();
+
   const [counter, setCounter] = useState(1);
- 
-  const {addItem}=useContext(CartContex);
-  
+
+  const { addItem } = useContext(CartContex);
 
   const increaseQty = () => {
     if (counter < item.stock) {
-      setCounter(prevCounter => prevCounter + 1);
+      setCounter((prevCounter) => prevCounter + 1);
     }
   };
 
   const decreaseQty = () => {
     if (counter > 1) {
-      setCounter(prevCounter => prevCounter - 1);
+      setCounter((prevCounter) => prevCounter - 1);
     }
   };
 
   const onAdd = () => {
-    addItem (item, counter)
-    setAddClick(true)
-   
-  }
-  
+    addItem(item, counter);
+    setAddClick(true);
+  };
 
   const [addClick, setAddClick] = useState(false);
-
 
   return (
     <div className="main">
@@ -61,8 +57,11 @@ const ItemDetail = ({ item }) => {
               Agregar al carrito
             </button>
 
-           { addClick && <button className="onAdd-btn" onClick={() => navigate("/cart")}> Ver Carrito</button> }
-           
+            {addClick && (
+              <button className="onAdd-btn" onClick={() => navigate("/cart")}>
+                Ver Carrito
+              </button>
+            )}
           </div>
         </div>
       </div>

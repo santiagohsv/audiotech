@@ -1,15 +1,33 @@
 import { useEffect, useState } from "react";
 import { getProductos } from "../../database";
 import ItemList from "../ItemList";
+import {getFirestore} from "../../firebase";
 import "./styles.css";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
-
+  
+  
   useEffect(() => {
-    const fetchData = async () => {
+    const db = getFirestore();
+    const collection = db.collection("productos");
+
+    const getData = async () => {
+      const results = await collection.get();
+       setIsLoading(true);
+       try {
+       setProductos(results.docs.map((doc) => ({ ...doc.data(), id: doc.id })));}
+       catch (error) {
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getData();
+
+    /*     const fetchData = async () => {
       setIsLoading(true);
 
       try {
@@ -21,17 +39,13 @@ function ItemListContainer() {
         setIsLoading(false);
       }
     };
-    fetchData();
+    fetchData();  */
   }, []);
 
   if (isLoading) {
     return (
       <div className="item-list-container">
-     
-
-<div className="spinner"></div>
-
-
+        <div className="spinner"></div>
       </div>
     );
   } else if (isError) {
