@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getProductos } from "../../database";
 import ItemList from "../ItemList";
 import {getFirestore} from "../../firebase";
 import "./styles.css";
+import { CartContex } from "../../contexts/CartContext";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
+  const { clear } = useContext(CartContex);
   
   
   useEffect(() => {
@@ -23,6 +25,7 @@ function ItemListContainer() {
         setIsError(true);
       } finally {
         setIsLoading(false);
+        clear()
       }
     };
     getData();

@@ -44,7 +44,8 @@ const Cart = () => {
     db.collection("ordenes")
       .add(newOrder)
       .then((res) => 
-        navigate(`/checkout/${res.id}`));
+        navigate(`/checkout/${res.id}`))
+      .then (clear());
   };
 
   return (
@@ -172,94 +173,3 @@ export default Cart;
 
 
 
-/* const Cart = () => {
-  const navigate = useNavigate();
-
-  const { cart, clear, getPrice, removeItem } = useContext(CartContex);
-  const [name, setName] = useState();
-  const [mail, setMail] = useState();
-  const [phone, setPhone] = useState();
- d
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const order = {
-      buyer: {
-        name,
-        phone,
-      },
-      cart,
-      total: getPrice(),
-    };
-
-
-    const db = getFirestore();
-    db.collection("ordenes")
-      .add(order)
-      .then((res) => {
-        console.log("compra realizada");
-        navigate(`/checkout/${res.id}`);
-      })
-      .catch((err) => console.log("hubo un error"));
-
-    clear();
-  };
-
-  return (
-    <>
-      {cart.map((items) => (
-        <div key={items.id} className="item-resume">
-          <div className="item-img">
-            <img src={items.img} alt="{items.description} " />
-          </div>
-          <div className="item-name">
-            <h3>{items.name}</h3>
-          </div>
-          <div className="item-qty">
-            <h3>{items.cantidad}</h3>
-          </div>
-          <div className="item-price">
-            <h3> $ {items.precio}</h3>
-          </div>
-          <button className="removeBtn" onClick={() => removeItem(items.id)}>
-            <img className="trashImg" alt="trash-button" src={trash} />
-          </button>
-        </div>
-      ))}
-
-      <div className="total-price">
-        <h2>Total: $ {getPrice()} </h2>
-      </div>
-
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Nombre</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Juan"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label htmlFor="mail">Mail</label>
-        <input
-          type="text"
-          id="mail"
-          name="mail"
-          placeholder="example@mail.com"
-          onChange={(e) => setMail(e.target.value)}
-        />
-        <label htmlFor="phone">Telefono</label>
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          placeholder=""
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <input type="submit" value="Confirmar compra" />
-      </form>
-    </>
-  );
-};
-
-export default Cart; */
