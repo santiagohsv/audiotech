@@ -1,7 +1,17 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+}
+
+html {
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
 }

@@ -5,15 +5,10 @@ import ItemCount from "../ItemCount";
 
 import "./styles.css";
 
-
-
 const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
-
   const [counter, setCounter] = useState(1);
-
   const { addItem } = useContext(CartContex);
-
   const increaseQty = () => {
     if (counter < item.stock) {
       setCounter((prevCounter) => prevCounter + 1);

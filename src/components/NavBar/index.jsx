@@ -16,9 +16,6 @@ const NavBar = () => {
             <li>
             <Link to="productos">TIENDA</Link>
             </li>
-            <li>
-            <Link to="contacto">CONTACTO</Link>
-            </li>
           </ul>
         </div>
         <CardWidget />

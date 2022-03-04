@@ -1,37 +1,166 @@
-.underConstruction {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 60vh;
+/* HomePage */
+.main-homepage {
+  height: 100%;
 }
-
-.underContainer {
-  height: fit-content;
+.welcome-container {
+  width: 100%;
+  min-height: 60vh;
+  color: white;
+  background-image: url(https://tododj.com/wp-content/uploads/2020/05/td_home_slider-1400x737.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.welcome-container h1 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 80px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+.btn-container button {
+  width: 112px;
+  height: 32px;
+  margin-left: 4px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: inherit;
+}
+
+.btn-container button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-main-container h2 {
+  width: 200px;
+  margin-top: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.brand-container {
+  height: 170px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-card {
+  width: 150px;
+  height: 150px;
+  margin-left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.information-container {
+  width: 60vw;
+  height: 150px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.information-card {
+  width: 30%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.information-card h3 {
+  font-size: 0.7rem;
+}
+
+.information-card img {
+  width: 48px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* ProductPage */
+
+.category-container {
+  background-image: url(https://thumbs.static-thomann.de/thumb//convert/pics/images/category/fx/cat_sp.jpg);
+  height: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.category-container h2 {
+  font-size: 2rem;
+}
+
+.category-links {
+  display: flex;
+  justify-content: center;
+
+  width: 500px;
+}
+
+.category-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 32px;
+  margin-top: 32px;
+  margin-left: 16px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: inherit;
+  font-size: 0.7rem;
+}
+
+a.active {
+  background-color: rgba(49, 49, 213, 0.901);
 }
 
 .secondFont {
+  font-size: 1rem;
   font-family: "Bungee Shade", cursive;
 }
 
-.fistFont {
-  font-family: "Maven Pro", sans-serif;
-}
-
-.productos {
-  margin-top: 20%;
-  font-size: 32px;
-}
+/* CartPage */
 
 .empty-cart {
-  height: 200px;
+  min-height: 100vh;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -42,6 +171,7 @@
 }
 
 .empty-cart a {
+  margin-top: 48px;
   font-size: 2rem;
 }
 
@@ -117,3 +247,30 @@
   font-weight: 800;
   display: inline-block;
 }
+
+/* MEDIA QUERYS */
+
+@media (min-width: 800px) {
+  .secondFont {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .brand-main-container {
+    height: 100%;
+  }
+  .brand-container {
+    height: 10%;
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .information-container {
+    height: 100%;
+  }
+  .welcome-container h1 {
+    font-size: 1rem;
+  }
+} ;

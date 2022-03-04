@@ -22,10 +22,8 @@ const CheckoutPage = () => {
         }
         setOrder(doc.data());
       })
-      .then(console.log(order))
       .catch((error) => {
         setIsError(true);
-        console.log(error);
       })
       .finally(setIsLoading(false));
   }, [orderId]);
@@ -50,14 +48,12 @@ const CheckoutPage = () => {
           <div className="order-shipping">
             <p>DIRECCION DE ENTREGA</p>
             <div className="order-shipping-data">
-              {order.buyer?.name} {order.buyer?.firstName} -  {" "}
-              {order.buyer?.address}, {order.buyer?.city}, {order?.buyer?.country},
-              {" "}
-              {order.buyer?.postalCode}.
+              {order.buyer?.nombre} {order.buyer?.apellido} -{" "}
+              {order.buyer?.direccion}, {order.buyer?.ciudad},{" "}
+              {order?.buyer?.pais},{order.buyer?.codigoPostal}.
             </div>
           </div>
 
-         
           <div className="order-shipping"> DETALLE</div>
           {order.cart?.map((items) => (
             <div key={items?.id} className="order-resume">
@@ -73,7 +69,7 @@ const CheckoutPage = () => {
             </div>
           ))}
           <div className="order-price">
-            PRECIO TOTAL <span>${order?.total}</span>
+            PRECIO TOTAL <span>$ {order?.total}</span>
           </div>
         </div>
       </div>
@@ -82,4 +78,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-

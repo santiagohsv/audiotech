@@ -1,10 +1,11 @@
 .main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: "PT Sans Narrow", sans-serif;
+  margin: 0 auto;
   margin-right: 10%;
-  margin-left: 10%;
-  margin-top: 48px;
 }
 .item-title {
   display: flex;
@@ -19,7 +20,8 @@
 
 .itemDetailContainer {
   display: flex;
-  width: 75%;
+  width: 60%;
+  height: max-content;
   margin: auto;
 }
 
@@ -39,7 +41,6 @@
 
 .detailContainer {
   width: 350px;
-  height: 40%;
   margin-bottom: 100px;
   font-size: 1vw;
 }
@@ -54,7 +55,7 @@
   font-weight: 900;
 }
 
-h2 {
+.detailContainer h2 {
   margin-top: 40px;
   font-size: 0.9rem;
 }
@@ -68,7 +69,7 @@ h2 {
   margin-top: 16px;
   width: 100%;
   text-align: justify;
-  min-height: 60%;
+  min-height: 40%;
   font-size: 0.8rem;
 }
 
@@ -79,7 +80,7 @@ h2 {
   height: 40px;
   border-radius: 8px;
   margin-top: 6%;
-  background-color: rgba(49, 49, 213, 0.901);
+  background-color: rgba(22, 22, 111, 0.901);
   cursor: pointer;
   color: white;
 }
@@ -92,4 +93,35 @@ h2 {
 .detail-btn a {
   text-decoration: none;
   color: inherit;
+}
+
+@media (max-width: 782px) {
+  .itemDetailContainer {
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
+
+  .main {
+    height: fit-content;
+    margin: 0 auto;
+  }
+
+  .productDescription {
+    margin-top: 8px;
+  }
+
+  .detailContainer h2 {
+    margin-top: 16px;
+    font-size: 0.9rem;
+  }
+
+  .productDetails {
+    margin-top: 8pxpx;
+  }
+}
+@media (min-width: 782px) and (max-width: 984px) {
+  .productDescription {
+    min-height: 40%;
+  }
 }

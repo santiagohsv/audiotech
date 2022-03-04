@@ -1,52 +1,40 @@
 import "./styles.css";
 import trash from "./media/trash-can.png";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContex } from "../../contexts/CartContext";
 import { getFirestore } from "../../firebase";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-
-
-
+import { useForm } from "react-hook-form";
 
 const Cart = () => {
   const navigate = useNavigate();
-
   const { cart, clear, getPrice, removeItem } = useContext(CartContex);
-  const [name, setName] = useState();
-  const [firstName, setFirstName] = useState();
-  const [mail, setMail] = useState();
-  const [phone, setPhone] = useState();
-  const [address, setAddress] = useState();
-  const [city, setCity] = useState();
-  const [country, setCountry] = useState();
-  const [postalCode, setPostalCode] = useState();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const onSubmit = (data) => {
+    
+     let userData = data;
     const newOrder = {
       buyer: {
-        name,
-        firstName,
-        mail,
-        phone,
-        address,
-        city,
-        country,
-        postalCode
+      ...userData
       },
       cart,
       total: getPrice(),
     };
-
+  
     const db = getFirestore();
     db.collection("ordenes")
       .add(newOrder)
       .then((res) => 
         navigate(`/checkout/${res.id}`))
-      .then (clear());
-  };
+      .catch((error)=>console.log(error))
+      .finally(clear());
+  }
 
   return (
     <div className="cart-container">
@@ -78,6 +66,10 @@ const Cart = () => {
             </button>
           </div>
         ))}
+
+        <div className="total-price">
+          <h2>PRECIO TOTAL: $ {getPrice()} </h2>
+        </div>
       </div>
       <div className="cart-detail">
         <h2 className="cart-title">CHECKOUT</h2>
@@ -85,38 +77,91 @@ const Cart = () => {
           <h3>DATOS PERSONALES </h3>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)} className="checkout-form">
           <input
             type="text"
-            id="name"
-            name="name"
+            name="nombre"
             placeholder="NOMBRE"
-            onChange={(e) => setName(e.target.value)}
+            {...register("nombre", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-zA-Z]+$/g, // verifico que no tenga números ni símbolos.
+                message: "Ingrese únicamente letras",
+              },
+            })}
           />
+
+          <div className="form-error-msg">
+            {errors.nombre && (
+              <span className="form-warning">{errors.nombre.message}</span>
+            )}
+          </div>
 
           <input
             type="text"
-            id="firstName"
-            name="firstName"
+            name="apellido"
             placeholder="APELLIDO"
-            onChange={(e) => setFirstName(e.target.value)}
+            {...register("apellido", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-zA-Z]+$/g, // verifico que no tenga números ni símbolos.
+                message: "Ingrese únicamente letras",
+              },
+            })}
           />
+
+          <div className="form-error-msg">
+            {errors.apellido && (
+              <span className="form-warning">{errors.apellido.message}</span>
+            )}
+          </div>
 
           <input
             type="text"
-            id="mail"
-            name="mail"
-            placeholder="MAIL"
-            onChange={(e) => setMail(e.target.value)}
+            name="email"
+            placeholder="CORREO"
+            {...register("email", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /\S+@\S+\.\S+/g, // validacion mail
+                message: "El formato no es correcto. Ej. example@mail.com",
+              },
+            })}
           />
-
+          <div className="form-error-msg">
+            {errors.email && (
+              <span className="form-warning">{errors.email.message}</span>
+            )}
+          </div>
           <input
             type="text"
-            id="phone"
             name="phone"
             placeholder="TELEFONO"
-            onChange={(e) => setPhone(e.target.value)}
+            {...register("phone", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^\+\d{10,}$/,
+                message: " Ej. +54 XXX X XXX XXX - Al menos 10 números",
+              },
+            })}
           />
+          <div className="form-error-msg">
+            {errors.phone && (
+              <span className="form-warning">{errors.phone.message}</span>
+            )}
+          </div>
 
           <div className="shipping-subtitle">
             <h3>DATOS DEL ENVIO </h3>
@@ -124,52 +169,100 @@ const Cart = () => {
 
           <input
             type="text"
-            id="domicilio"
-            name="domicilio"
-            placeholder="DOMICILIO"
-            onChange={(e) => setAddress(e.target.value)}
+            name="direccion"
+            placeholder="DIRECCION"
+            {...register("direccion", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-z0-9\s,'-]*$/i,
+                message: "Ingrese una dirección válida",
+              },
+            })}
           />
+          <div className="form-error-msg">
+            {errors.direccion && (
+              <span className="form-warning">{errors.direccion.message}</span>
+            )}
+          </div>
 
           <input
             type="text"
-            id="ciudad"
-            name="ciudad"
+            name="ciudad "
             placeholder="CIUDAD"
-            onChange={(e) => setCity(e.target.value)}
+            {...register("ciudad", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-zA-Z]+$/g, // verifico que no tenga números ni símbolos.
+                message: "Ingrese una ciudad válida",
+              },
+            })}
           />
+          <div className="form-error-msg">
+            {errors.ciudad && (
+              <span className="form-warning">{errors.ciudad.message}</span>
+            )}
+          </div>
 
           <input
             type="text"
-            id="pais"
             name="pais"
             placeholder="PAIS"
-            onChange={(e) => setCountry(e.target.value)}
+            {...register("pais", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-zA-Z]+$/g, // verifico que no tenga números ni símbolos.
+                message: "Ingrese país válidoß",
+              },
+            })}
           />
+
+          <div className="form-error-msg">
+            {errors.pais && (
+              <span className="form-warning">{errors.pais.message}</span>
+            )}
+          </div>
+
           <input
             type="text"
-            id="codigopostal"
-            name="codigopostal"
+            name="codigoPostal"
             placeholder="CODIGO POSTAL"
-            onChange={(e) => setPostalCode(e.target.value)}
+            {...register("codigoPostal", {
+              required: {
+                value: true,
+                message: "campo obligatorio",
+              },
+              pattern: {
+                value: /^[a-zA-Z0-9]+$/g, // verifica teléfono contenga números y simbolo +^
+                message: "El formato no es correcto",
+              },
+            })}
           />
+          <div className="form-error-msg">
+            {errors.codigoPostal && (
+              <span className="form-warning">
+                {errors.codigoPostal.message}
+              </span>
+            )}
+          </div>
 
-          <input
-            type="submit"
-            className="checkout-btn"
-            value="Terminar compra"
-          />
+          <button type="submit" className="checkout-btn">
+            {" "}
+            TERMINAR COMPRA{" "}
+          </button>
         </form>
-
-        <div className="total-price">
-          <h2>PRECIO TOTAL: $ {getPrice()} </h2>
-        </div>
       </div>
     </div>
   );
 };
 
 export default Cart;
-
-
-
 

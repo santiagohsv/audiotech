@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getPrice = () => { 
-    return  cart.reduce((total, item) => item.cantidad * item.precio + total, 0);
+    return  cart.reduce((total, item) => item.cantidad * item.precio + total, 0).toFixed(2);
   };
 
   const clear = () => {
