@@ -8,13 +8,13 @@ const NavBar = () => {
       <nav>
         <div className="navBar">
           <h1 className="brand">
-          <Link to="/">audio tech</Link></h1>
+          <Link to="/audiotech">audio tech</Link></h1>
           <ul>
             <li>
-              <Link to="/">INICIO</Link>
+              <Link to="/audiotech">INICIO</Link>
             </li>
             <li>
-            <Link to="productos">TIENDA</Link>
+            <Link to="/audiotech/productos">TIENDA</Link>
             </li>
           </ul>
         </div>

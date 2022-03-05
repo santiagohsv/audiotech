@@ -15,7 +15,7 @@ import { CartContex } from "../../contexts/CartContext";
           src={shoppingCart}
           alt="shoppingCart"
           className="header-cart-logo"
-          onClick={() => navigate("/cart")}
+          onClick={() => navigate("/audiotech/cart")}
         />
          {cart.length !== 0 && (
           <h3 className="header-cart-counter">{getQty()}</h3>

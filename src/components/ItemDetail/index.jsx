@@ -53,7 +53,7 @@ const ItemDetail = ({ item }) => {
             </button>
 
             {addClick && (
-              <button className="onAdd-btn" onClick={() => navigate("/cart")}>
+              <button className="onAdd-btn" onClick={() => navigate("/audiotech/cart")}>
                 Ver Carrito
               </button>
             )}

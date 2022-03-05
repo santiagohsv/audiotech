@@ -12,7 +12,7 @@ const CartPage = () => {
       {cart.length === 0 ? (
         <div className="empty-cart">
           <h1>No hay productos en el carrito :(</h1>{" "}
-          <Link to="/productos" className="secondFont">
+          <Link to="/audiotech/productos" className="secondFont">
             ir a la tienda
           </Link>
         </div>

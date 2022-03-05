@@ -9,7 +9,7 @@ const HomePage = () => {
         <h1 className="welcome-title">BIENVENIDOS A NUESTRA TIENDA ONLINE</h1>
         <div className="btn-container">
           <button>
-            <Link to="productos">IR A TIENDA</Link>
+            <Link to="/audiotech/productos">IR A TIENDA</Link>
           </button>
         </div>
       </div>

@@ -10,9 +10,9 @@ const Productos = () => {
       <div className="category-container">
         <h2>CATEGORIAS</h2>
         <div className="category-links">
-          <NavLink end  to="/productos">todas</NavLink>
-          <NavLink to="/productos/categorias/recording">grabacion</NavLink>
-          <NavLink to="/productos/categorias/synthesizer">sintetizadores</NavLink>
+          <NavLink end  to="/audiotech/productos">todas</NavLink>
+          <NavLink to="/audiotech/productos/categorias/recording">grabacion</NavLink>
+          <NavLink to="/audiotech/productos/categorias/synthesizer">sintetizadores</NavLink>
         </div>
       </div>
       <ItemListContainer />

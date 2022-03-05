@@ -38,7 +38,7 @@
 .cart-detail-subtitle {
   width: 90%;
   height: max-content;
-  margin-top: 8%;
+  margin-top: 2%;
   margin-left: 5%;
   display: flex;
   justify-content: left;
@@ -56,7 +56,6 @@ h3 {
   height: max-content;
   margin-top: 4%;
   margin-left: 5%;
-  margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   opacity: 0.7;
@@ -194,7 +193,7 @@ hr {
 }
 
 form {
-  margin-top: 16px;
+  margin-top: 8px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -258,6 +257,5 @@ input {
 
   .cart-detail {
     width: 35%;
-    max-width: 800px;
   }
 } ;

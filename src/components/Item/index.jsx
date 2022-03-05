@@ -13,7 +13,7 @@ const Item = ({ producto }) => {
       />
       <p> {producto.name} </p>
       <p> Precio ${producto.precio} </p>
-      <button onClick={() => navigate(`/productos/${producto.id}`)}>
+      <button onClick={() => navigate(`/audiotech/productos/${producto.id}`)}>
         Ver detalle
       </button>
     </div>

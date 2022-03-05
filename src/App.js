@@ -15,15 +15,15 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/">
+          <Route path="/audiotech">
             <Route index element={<HomePage />} />
-            <Route exact path="productos">
+            <Route exact path="/audiotech/productos">
               <Route index element={<Productos />} />
-              <Route path=":idProducto" element={<ProductDetail />} />
-              <Route path="categorias/:idCategory" element={<Productos />} />
+              <Route path="/audiotech/productos/:idProducto" element={<ProductDetail />} />
+              <Route path="/audiotech/productoscategorias/:idCategory" element={<Productos />} />
             </Route>
-            <Route path="cart" element={<CartPage />} />
-            <Route path="checkout/:orderId" element={<CheckoutPage />} />
+            <Route path="/audiotech/cart" element={<CartPage />} />
+            <Route path="/audiotech/checkout/:orderId" element={<CheckoutPage />} />
           </Route>
         </Routes>
         <Footer />

@@ -31,7 +31,7 @@ const Cart = () => {
     db.collection("ordenes")
       .add(newOrder)
       .then((res) => 
-        navigate(`/checkout/${res.id}`))
+        navigate(`/audiotech/checkout/${res.id}`))
       .catch((error)=>console.log(error))
       .finally(clear());
   }
@@ -42,7 +42,7 @@ const Cart = () => {
         <h1 className="cart-title">CARRITO DE COMPRAS</h1>
         <div className="cart-subtitle">
           <h3>
-            <Link to="/Productos">CONTINUAR COMPRANDO</Link>
+            <Link to="/audiotech/Productos">CONTINUAR COMPRANDO</Link>
           </h3>
         </div>
         <hr />
