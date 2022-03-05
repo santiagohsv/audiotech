@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/audiotech/static/css/main.0a5052d5.css",
-    "main.js": "/audiotech/static/js/main.4c7cef42.js",
+    "main.js": "/audiotech/static/js/main.91996656.js",
     "static/js/787.622caf28.chunk.js": "/audiotech/static/js/787.622caf28.chunk.js",
     "index.html": "/audiotech/index.html",
     "main.0a5052d5.css.map": "/audiotech/static/css/main.0a5052d5.css.map",
-    "main.4c7cef42.js.map": "/audiotech/static/js/main.4c7cef42.js.map",
+    "main.91996656.js.map": "/audiotech/static/js/main.91996656.js.map",
     "787.622caf28.chunk.js.map": "/audiotech/static/js/787.622caf28.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a5052d5.css",
-    "static/js/main.4c7cef42.js"
+    "static/js/main.91996656.js"
   ]
 }
