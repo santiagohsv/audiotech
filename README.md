@@ -1,11 +1,7 @@
 # AUDIO TECH
 
-## RESUMEN
+##Tienda de venta de articulos relacionados a grabación, sonido e instrumentos musicales. 
 
-Simula una tienda de venta de articulos relacionados a grabacion, sonido e instrumentos musicales. 
-
-
-***
 
 ## Dependencias
 
