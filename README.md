@@ -2,6 +2,14 @@
 
 ## RESUMEN
 
-Simulador de una tienda de venta de articulos de audio y sonido. En principio cuenta con tres secciones principales INICIO/TIENDA y CONTACTO.
+Simula una tienda de venta de articulos relacionados a grabacion, sonido e instrumentos musicales. 
 
-En la sección TIENDA se visualizan los productos del catalogo, y se puede acceder a los detalles de cada producto.
+
+***
+
+## Dependencias
+
+* React-router-dom
+* Firebase
+* React-hook-form
+* Gh-pages
