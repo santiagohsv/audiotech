@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/curso-react">
+          <Route path="/">
             <Route index element={<HomePage />} />
             <Route exact path="productos">
               <Route index element={<Productos />} />
